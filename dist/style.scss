@@ -1,12 +1,16 @@
-$react-empty-state-options: () !default;
+$react-empty-state-options: (
+  centered: 37.5%
+) !default;
 
 .react-empty-state {
+  $centered: map-get($map: $react-empty-state-options, $key: centered);
+
   text-align: center;
   font-size: 12px;
   &.is-center {
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: $centered;
     transform: translate(-50%, -50%);
   }
 
