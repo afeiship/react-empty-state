@@ -1,0 +1,19 @@
+$react-empty-state-options: () !default;
+
+.react-empty-state {
+  text-align: center;
+  font-size: 12px;
+  &.is-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .is-title {
+    margin: 6px auto;
+    color: #999;
+  }
+  .is-description {
+  }
+}
