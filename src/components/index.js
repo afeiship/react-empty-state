@@ -52,7 +52,11 @@ export default class extends Component {
     return (
       <div
         data-component={CLASS_NAME}
-        className={classNames(CLASS_NAME, className)}
+        className={classNames(
+          CLASS_NAME,
+          { 'is-center': centered },
+          className
+        )}
         {...props}>
         {element}
         {title && <div className="is-title">{title}</div>}
