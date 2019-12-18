@@ -30,8 +30,7 @@ export default class extends Component {
     className: PropTypes.string,
     centered: PropTypes.bool,
     element: PropTypes.element,
-    title: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
-    description: PropTypes.oneOfType([PropTypes.string, PropTypes.element])
+    title: PropTypes.oneOfType([PropTypes.string, PropTypes.element])
   };
 
   static defaultProps = {
@@ -56,8 +55,7 @@ export default class extends Component {
         className={classNames(CLASS_NAME, className)}
         {...props}>
         {element}
-        {title && <p className="is-title">{title}</p>}
-        {description && <div className="is-description">{description}</div>}
+        {title && <div className="is-title">{title}</div>}
         {children}
       </div>
     );

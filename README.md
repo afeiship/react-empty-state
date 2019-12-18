@@ -6,11 +6,12 @@
 npm install -S @feizheng/react-empty-state
 ```
 ## properties
-| property        | type | description |
-| --------------- | ---- | ----------- |
-| className       | -    | -           |
-| value           | -    | -           |
-| onChange        | -    | -           |
+| property  | type           | default | description |
+| --------- | -------------- | ------- | ----------- |
+| className | String         | -       | -           |
+| centered  | Boolean        | false   | -           |
+| element   | Element        | svg     | -           |
+| title     | String/Element | No data | -           |
 
 ## usage
 1. import css
