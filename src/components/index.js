@@ -1,9 +1,6 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import noop from '@feizheng/noop';
-import objectAssign from 'object-assign';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 
 const CLASS_NAME = 'react-empty-state';
 const EMPTY_ELEM = (
@@ -24,13 +21,29 @@ const EMPTY_ELEM = (
   </svg>
 );
 
-export default class extends Component {
+export default class ReactEmptyState extends Component {
   static displayName = CLASS_NAME;
+  static version = '__VERSION__';
   static propTypes = {
+    /**
+     * The extended className for component.
+     */
     className: PropTypes.string,
+    /**
+     * If absoute center.
+     */
     centered: PropTypes.bool,
+    /**
+     * The core element(picture).
+     */
     element: PropTypes.element,
-    title: PropTypes.oneOfType([PropTypes.string, PropTypes.element])
+    /**
+     * The empty status title.
+     */
+    title: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.element
+    ])
   };
 
   static defaultProps = {
@@ -49,14 +62,11 @@ export default class extends Component {
       centered,
       ...props
     } = this.props;
+
     return (
       <div
         data-component={CLASS_NAME}
-        className={classNames(
-          CLASS_NAME,
-          { 'is-center': centered },
-          className
-        )}
+        className={classNames(CLASS_NAME, { 'is-center': centered }, className)}
         {...props}>
         {element}
         {title && <div className="is-title">{title}</div>}
