@@ -8,12 +8,7 @@
 
 ## installation
 ```shell
-npm install -S @feizheng/react-empty-state
-```
-
-## update
-```shell
-npm update @feizheng/react-empty-state
+npm install -S @jswork/react-empty-state
 ```
 
 ## properties
@@ -22,45 +17,36 @@ npm update @feizheng/react-empty-state
 | className | string  | false    | -         | The extended className for component. |
 | centered  | bool    | false    | false     | If absoute center.                    |
 | element   | element | false    | -         | The core element(picture).            |
-| title     | union   | false    | 'No data' | The empty status title.               |
+| title     | any     | false    | 'No data' | The empty status title.               |
 
 
 ## usage
 1. import css
   ```scss
-  @import "~@feizheng/react-empty-state/dist/style.scss";
+  @import "~@jswork/react-empty-state/dist/style.css";
+
+  // or use sass
+  @import "~@jswork/react-empty-state/dist/style.scss";
 
   // customize your styles:
   $react-empty-state-options: ()
   ```
 2. import js
   ```js
-  import NxOfflineSw from '@feizheng/next-offline-sw';
-  import ReactGithubCorner from '@feizheng/react-github-corner';
-  import ReactSwUpdateTips from '@feizheng/react-sw-update-tips';
+  import ReactDemokit from '@jswork/react-demokit';
   import React from 'react';
   import ReactDOM from 'react-dom';
-  import ReactEmptyState from '@feizheng/react-empty-state';
+  import ReactEmptyState from '@jswork/react-empty-state';
   import './assets/style.scss';
 
   class App extends React.Component {
-    state = { hasUpdate: false };
-
-    componentDidMount() {
-      NxOfflineSw.install({
-        onUpdateReady: () => {
-          this.setState({ hasUpdate: true });
-        }
-      });
-    }
-
     render() {
       return (
-        <div className="p-3 app-container">
+        <ReactDemokit
+          className="p-3 app-container"
+          url="https://github.com/afeiship/react-empty-state">
           <ReactEmptyState centered title="暂无数据" />
-          <ReactSwUpdateTips value={this.state.hasUpdate} />
-          <ReactGithubCorner value="https://github.com/afeiship/react-empty-state" />
-        </div>
+        </ReactDemokit>
       );
     }
   }
@@ -76,14 +62,14 @@ npm update @feizheng/react-empty-state
 ## license
 Code released under [the MIT license](https://github.com/afeiship/react-empty-state/blob/master/LICENSE.txt).
 
-[version-image]: https://img.shields.io/npm/v/@feizheng/react-empty-state
-[version-url]: https://npmjs.org/package/@feizheng/react-empty-state
+[version-image]: https://img.shields.io/npm/v/@jswork/react-empty-state
+[version-url]: https://npmjs.org/package/@jswork/react-empty-state
 
-[license-image]: https://img.shields.io/npm/l/@feizheng/react-empty-state
+[license-image]: https://img.shields.io/npm/l/@jswork/react-empty-state
 [license-url]: https://github.com/afeiship/react-empty-state/blob/master/LICENSE.txt
 
-[size-image]: https://img.shields.io/bundlephobia/minzip/@feizheng/react-empty-state
+[size-image]: https://img.shields.io/bundlephobia/minzip/@jswork/react-empty-state
 [size-url]: https://github.com/afeiship/react-empty-state/blob/master/dist/react-empty-state.min.js
 
-[download-image]: https://img.shields.io/npm/dm/@feizheng/react-empty-state
-[download-url]: https://www.npmjs.com/package/@feizheng/react-empty-state
+[download-image]: https://img.shields.io/npm/dm/@jswork/react-empty-state
+[download-url]: https://www.npmjs.com/package/@jswork/react-empty-state

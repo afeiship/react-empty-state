@@ -40,10 +40,7 @@ export default class ReactEmptyState extends Component {
     /**
      * The empty status title.
      */
-    title: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.element
-    ])
+    title: PropTypes.any
   };
 
   static defaultProps = {
