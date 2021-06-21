@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import filterReactProps from '@jswork/filter-react-props';
 
 const CLASS_NAME = 'react-empty-state';
 const EMPTY_ELEM = (
@@ -46,7 +47,7 @@ export default class ReactEmptyState extends Component {
   static defaultProps = {
     centered: false,
     element: EMPTY_ELEM,
-    title: 'No data'
+    title: '暂无数据'
   };
 
   render() {
@@ -59,12 +60,13 @@ export default class ReactEmptyState extends Component {
       centered,
       ...props
     } = this.props;
+    const externalProps = filterReactProps(props);
 
     return (
       <div
         data-component={CLASS_NAME}
         className={classNames(CLASS_NAME, { 'is-center': centered }, className)}
-        {...props}>
+        {...externalProps}>
         {element}
         {title && <div className="is-title">{title}</div>}
         {children}
