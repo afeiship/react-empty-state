@@ -60,13 +60,13 @@ export default class ReactEmptyState extends Component {
       centered,
       ...props
     } = this.props;
-    const externalProps = filterReactProps(props);
+    const theProps = filterReactProps(props);
 
     return (
       <div
         data-component={CLASS_NAME}
         className={classNames(CLASS_NAME, { 'is-center': centered }, className)}
-        {...externalProps}>
+        {...theProps}>
         {element}
         {title && <div className="is-title">{title}</div>}
         {children}
