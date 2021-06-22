@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import filterReactProps from '@jswork/filter-react-props';
 
 const CLASS_NAME = 'react-empty-state';
+const IGNORE_PROPS = ['onItemClick'];
 const EMPTY_ELEM = (
   <svg
     width="64"
@@ -60,7 +61,8 @@ export default class ReactEmptyState extends Component {
       centered,
       ...props
     } = this.props;
-    const theProps = filterReactProps(props);
+
+    const theProps = filterReactProps(props, IGNORE_PROPS);
 
     return (
       <div

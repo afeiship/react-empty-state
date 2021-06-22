@@ -10,7 +10,7 @@ class App extends React.Component {
       <ReactDemokit
         className="p-3 app-container"
         url="https://github.com/afeiship/react-empty-state">
-        <ReactEmptyState centered title="暂无数据" />
+        <ReactEmptyState onItemClick={e=>{console.log('item click');}} centered title="暂无数据" />
       </ReactDemokit>
     );
   }
