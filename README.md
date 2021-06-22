@@ -12,12 +12,12 @@ npm install -S @jswork/react-empty-state
 ```
 
 ## properties
-| Name      | Type    | Required | Default   | Description                           |
-| --------- | ------- | -------- | --------- | ------------------------------------- |
-| className | string  | false    | -         | The extended className for component. |
-| centered  | bool    | false    | false     | If absoute center.                    |
-| element   | element | false    | -         | The core element(picture).            |
-| title     | any     | false    | 'No data' | The empty status title.               |
+| Name      | Type    | Required | Default    | Description                           |
+| --------- | ------- | -------- | ---------- | ------------------------------------- |
+| className | string  | false    | -          | The extended className for component. |
+| centered  | bool    | false    | false      | If absoute center.                    |
+| element   | element | false    | -          | The core element(picture).            |
+| title     | any     | false    | '暂无数据' | The empty status title.               |
 
 
 ## usage
