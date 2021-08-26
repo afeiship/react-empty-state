@@ -4,6 +4,10 @@ $react-empty-state-options: (
 
 .react-empty-state {
   $centered: map-get($map: $react-empty-state-options, $key: centered);
+  &[data-selectable="false"] {
+    user-select: none;
+    -webkit-user-drag: none;
+  }
 
   text-align: center;
   font-size: 12px;

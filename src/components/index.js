@@ -42,11 +42,16 @@ export default class ReactEmptyState extends Component {
     /**
      * The empty status title.
      */
-    title: PropTypes.any
+    title: PropTypes.any,
+    /**
+     * The element if can select/drag.
+     */
+    selectable: PropTypes.bool
   };
 
   static defaultProps = {
     centered: false,
+    selectable: true,
     element: EMPTY_ELEM,
     title: '暂无数据'
   };
@@ -59,6 +64,7 @@ export default class ReactEmptyState extends Component {
       description,
       children,
       centered,
+      selectable,
       ...props
     } = this.props;
 
@@ -67,6 +73,7 @@ export default class ReactEmptyState extends Component {
     return (
       <div
         data-component={CLASS_NAME}
+        data-selectable={selectable}
         className={classNames(CLASS_NAME, { 'is-center': centered }, className)}
         {...theProps}>
         {element}
