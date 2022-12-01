@@ -12,13 +12,12 @@ npm install -S @jswork/react-empty-state
 ```
 
 ## properties
-| Name       | Type    | Required | Default    | Description                           |
-| ---------- | ------- | -------- | ---------- | ------------------------------------- |
-| className  | string  | false    | -          | The extended className for component. |
-| centered   | bool    | false    | false      | If absoute center.                    |
-| element    | element | false    | -          | The core element(picture).            |
-| title      | any     | false    | '暂无数据' | The empty status title.               |
-| selectable | bool    | false    | true       | The element if can select/drag.       |
+| Name      | Type   | Required | Default    | Description                           |
+| --------- | ------ | -------- | ---------- | ------------------------------------- |
+| className | string | false    | -          | The extended className for component. |
+| centered  | bool   | false    | false      | If absoute center.                    |
+| icon      | any    | false    | -          | The icon element.                     |
+| title     | any    | false    | '暂无数据' | The empty status title.               |
 
 
 ## usage
@@ -36,7 +35,7 @@ npm install -S @jswork/react-empty-state
   ```js
   import ReactDemokit from '@jswork/react-demokit';
   import React from 'react';
-  import ReactDOM from 'react-dom';
+  import ReactDOM from 'react-dom/client';
   import ReactEmptyState from '@jswork/react-empty-state';
   import './assets/style.scss';
 
@@ -46,13 +45,13 @@ npm install -S @jswork/react-empty-state
         <ReactDemokit
           className="p-3 app-container"
           url="https://github.com/afeiship/react-empty-state">
-          <ReactEmptyState onItemClick={e=>{console.log('item click');}} centered title="暂无数据" />
+          <ReactEmptyState centered title="暂无数据" />
         </ReactDemokit>
       );
     }
   }
 
-  ReactDOM.render(<App />, document.getElementById('app'));
+  ReactDOM.createRoot(document.getElementById('app')).render(<App />);
 
   ```
 

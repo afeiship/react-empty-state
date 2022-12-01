@@ -1,15 +1,14 @@
 {
   "name": "@jswork/react-empty-state",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Empty state for react.",
   "main": "dist/index.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server",
     "build": "cross-env NODE_ENV=production webpack -p",
-    "postbuild": "node-sass src/components/style.scss dist/style.css",
+    "postbuild": "sass src/components/style.scss dist/style.css",
     "predocs": "node build/markdown.js",
     "docs": "cross-env NODE_ENV=docs webpack -p",
-    "postdocs": "t2k",
     "pages": "./bin/docs.rb",
     "start": "node build/server.js",
     "test": "jest",
