@@ -1,10 +1,8 @@
-import classNames from 'classnames';
+import cx from 'classnames';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import filterReactProps from '@jswork/filter-react-props';
 
 const CLASS_NAME = 'react-empty-state';
-const IGNORE_PROPS = ['onItemClick'];
 const EMPTY_ELEM = (
   <svg
     width="64"
@@ -36,47 +34,29 @@ export default class ReactEmptyState extends Component {
      */
     centered: PropTypes.bool,
     /**
-     * The core element(picture).
+     * The icon element.
      */
-    element: PropTypes.element,
+    icon: PropTypes.any,
     /**
      * The empty status title.
      */
-    title: PropTypes.any,
-    /**
-     * The element if can select/drag.
-     */
-    selectable: PropTypes.bool
+    title: PropTypes.any
   };
 
   static defaultProps = {
     centered: false,
-    selectable: true,
-    element: EMPTY_ELEM,
+    icon: EMPTY_ELEM,
     title: '暂无数据'
   };
 
   render() {
-    const {
-      className,
-      element,
-      title,
-      description,
-      children,
-      centered,
-      selectable,
-      ...props
-    } = this.props;
-
-    const theProps = filterReactProps(props, IGNORE_PROPS);
+    const { className, icon, title, children, centered, ...props } = this.props;
 
     return (
       <div
-        data-component={CLASS_NAME}
-        data-selectable={selectable}
-        className={classNames(CLASS_NAME, { 'is-center': centered }, className)}
-        {...theProps}>
-        {element}
+        className={cx(CLASS_NAME, { 'is-center': centered }, className)}
+        {...props}>
+        {icon}
         {title && <div className="is-title">{title}</div>}
         {children}
       </div>
