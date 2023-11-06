@@ -19,7 +19,7 @@ const EMPTY_ELEM = (
 );
 
 interface ReactEmptyStateProps extends React.HTMLAttributes<HTMLDivElement> {
-  lang?: string;
+  lang?: keyof typeof locales;
   icon?: any;
   title?: any;
 }
@@ -35,7 +35,7 @@ export default class ReactEmptyState extends Component<ReactEmptyStateProps> {
 
   get title() {
     const { title, lang } = this.props;
-    return title || locales[lang as any].title;
+    return title || locales[lang!].title;
   }
 
   render() {
