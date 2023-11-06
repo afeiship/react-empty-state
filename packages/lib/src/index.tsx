@@ -35,7 +35,7 @@ export default class ReactEmptyState extends Component<ReactEmptyStateProps> {
 
   get title() {
     const { title, lang } = this.props;
-    return title || locales[lang!].title;
+    return title || locales[lang as any].title;
   }
 
   render() {
