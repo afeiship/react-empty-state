@@ -1,0 +1,16 @@
+.react-empty-state {
+  --centered: 37.5%;
+
+  user-select: none;
+  text-align: center;
+  font-size: 12px;
+  position: absolute;
+  left: 50%;
+  top: var(--centered);
+  transform: translate(-50%, -50%);
+
+  .is-title {
+    margin: 6px auto;
+    color: #999;
+  }
+}
