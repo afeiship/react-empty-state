@@ -1,2 +1,2 @@
-# react-component-library
+# react-empty-state
 > Empty state for react.
