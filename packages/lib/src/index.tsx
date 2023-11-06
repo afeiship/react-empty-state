@@ -1,6 +1,5 @@
 import cx from 'classnames';
 import React, { Component } from 'react';
-import locales from './locales';
 
 const CLASS_NAME = 'react-empty-state';
 
@@ -19,7 +18,7 @@ const EMPTY_ELEM = (
 );
 
 interface ReactEmptyStateProps extends React.HTMLAttributes<HTMLDivElement> {
-  lang?: keyof typeof locales;
+  lang?: string;
   icon?: any;
   title?: any;
 }
@@ -33,18 +32,13 @@ export default class ReactEmptyState extends Component<ReactEmptyStateProps> {
     icon: EMPTY_ELEM,
   };
 
-  get title() {
-    const { title, lang } = this.props;
-    return title || locales[lang!].title;
-  }
-
   render() {
     const { className, icon, title, children, lang, ...props } = this.props;
 
     return (
       <div className={cx(CLASS_NAME, className)} data-language={lang} {...props}>
         {icon}
-        <h3 className="is-title">{this.title}</h3>
+        {title && <h3 className="is-title">{title}</h3>}
         {children}
       </div>
     );
