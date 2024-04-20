@@ -39,3 +39,16 @@
 .read-the-docs {
   color: #888;
 }
+
+.box{
+    position: relative;
+    height: 300px;
+    width: 60%;
+    min-width: 600px;
+    margin: 10px auto 0;
+    padding: 1em;
+    border: 1px solid #ccc;
+
+    .react-empty-state {
+    }
+}
