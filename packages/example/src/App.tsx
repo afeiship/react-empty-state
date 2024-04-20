@@ -16,7 +16,7 @@ function App() {
       </div>
 
       <div className='box'>
-      <EmptyState style={{'--centered': '50%'}} icon={<img width={120} src="https://tva1.js.work/large/007S8ZIlgy1gexw87htqhj305k05k74o.jpg" />}>
+      <EmptyState icon={<img width={120} src="https://tva1.js.work/large/007S8ZIlgy1gexw87htqhj305k05k74o.jpg" />}>
         <p className='is-title'>
          程序员紧张开发中，敬请期待！
         </p>
